@@ -243,7 +243,7 @@ async function starts() {
 			const isCmd = body.startsWith(prefix)
 
 			mess = {
-				wait: 'Calmao gordo puto estoy procesando 😎👏\n\nNo spames negro del orto 🤬🤑\n\nSi usastes la funcion *play asegurate de colocar bien el nombre de la cancion o el link del video 🧐\n\nFlaco los stickergif son de 6 segundos 🤢\n\nby shanduy',
+				wait: 'Procesando',
 				success: '✔️ Listo ✔️',
                                 levelon: '❬ ✔ ❭ *Level activado*',
 				leveloff: ' ❬ X ❭  *Level desactivado*',
@@ -828,7 +828,7 @@ async function starts() {
                 play = body.slice(5)
                 anu = await fetchJson(`https://api.zeks.xyz/api/ytplaymp3?q=${play}&apikey=apivinz`)
                if (anu.error) return reply(anu.error)
-                 infomp3 = `*Canción encontrada!!!*\nTítulo : ${anu.result.title}\nFuente : ${anu.result.source}\nTamaño : ${anu.result.size}\n\n*ESPERE ENVIANDO ARCHIVO, NO SPAMES LA CONCHA DE TU MADRE*`
+                 infomp3 = `*Canción encontrada!!!*\nTítulo : ${anu.result.title}\nFuente : ${anu.result.source}\nTamaño : ${anu.result.size}\n\n*ESPERE ENVIANDO ARCHIVO*`
                 buffer = await getBuffer(anu.result.thumbnail)
                 lagu = await getBuffer(anu.result.url_audio)
                 client.sendMessage(from, buffer, image, {quoted: mek, caption: infomp3})
@@ -843,7 +843,7 @@ async function starts() {
 					var umure = reg.split("|")[1];
 						user.push(sender)
 						fs.writeFileSync('./database/json/user.json', JSON.stringify(user))
-						client.sendMessage(from, `\`\`\`Registrado con exito flaco 👏😎🥳\`\`\`\n\n\`\`\`DNI: Ciudadano De Palestina 🇵🇸🤪👏\`\`\`\n\n\`\`\`Dia ${date} ${time}\`\`\`\n\`\`\`[Usuario]: ${jeneng}\`\`\`\n\`\`\`[Número]: wa.me/${sender.split("@")[0]}\`\`\`\n\`\`\`Para usar el bot\`\`\`\n\`\`\`Por favor\`\`\`\n\`\`\`enviar ${prefix}help\`\`\`\n\`\`\`\nTotal de usuários ${user.length}\`\`\``, text, {quoted: mek})
+						client.sendMessage(from, `\`\`\`Registrado con exito \`\`\`\n\n\`\`\`\`\`\`\n\n\`\`\`Dia ${date} ${time}\`\`\`\n\`\`\`[Usuario]: ${jeneng}\`\`\`\n\`\`\`[Número]: wa.me/${sender.split("@")[0]}\`\`\`\n\`\`\`Para usar el bot\`\`\`\n\`\`\`Por favor\`\`\`\n\`\`\`enviar ${prefix}help\`\`\`\n\`\`\`\nTotal de usuários ${user.length}\`\`\``, text, {quoted: mek})
 					break
                                 case 'welcome':
 					if (args.length < 1) return reply('Para activar está funcion coloca *welcome 1')
